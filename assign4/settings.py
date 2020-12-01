@@ -25,7 +25,7 @@ SECRET_KEY = ')bbmv1p&*c!ett9l_$lfrd)#%g_#zl&n7#cttjda%!k5xl)89e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['nebsdonuts.pythonanywhere.com']
+ALLOWED_HOSTS = ['nebsdonuts.pythonanywhere.com', 'localhost', '0.0.0.0']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'assign4'
 ]
 
 MIDDLEWARE = [
@@ -54,7 +55,7 @@ ROOT_URLCONF = 'assign4.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ["./templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
