@@ -13,30 +13,30 @@
 
 {% block content %}
 
+
     <header class="masthead bg-primary text-white text-center">
         <div class="container d-flex align-items-center flex-column">
             <h1 class="text-uppercase mb-0">Potential Employee Dashboard</h1><br><br>
-                {% if documents %}
-                    <ul>
-                    {% for document in documents %}
-                        <li><a href="{{ document.docfile.url }}">{{ document.docfile.name }}</a></li>
-                    {% endfor %}
-                    </ul>
-                {% else %}
-                    <p>No documents.</p>
-                {% endif %}
-            
-                    <!-- Upload form. Note enctype attribute! -->
-                    <form action="{% url 'list' %}" method="post" enctype="multipart/form-data">
-                        {% csrf_token %}
-                        <p>{{ form.non_field_errors }}</p>
-                        <p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }}</p>
-                        <p>
-                            {{ form.docfile.errors }}
-                            {{ form.docfile }}
-                        </p>
-                        <p><input type="submit" value="Upload" /></p>
-                    </form>
+            <table class="turqtext footer table rounded">
+                <tr><strong>
+                    <td><strong>
+                        Name
+                    </strong></td>
+                    <td><strong>
+                        Contact
+                    </strong></td>
+                </tr></strong>
+                {% for user in HM %}
+                <tr>
+                    <td>
+                        {{user.first_name}} {{user.last_name}}
+                    </td>
+                    <td>
+                        <a class="rounded" href="mailto:{{user.email}}">{{user.email}}</a> 
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
         </div>
     </header>
 

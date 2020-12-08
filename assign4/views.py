@@ -69,7 +69,7 @@ def userlogin(request):
         user = authenticate(username=username, password=raw_password)
         login(request, user)
         if user.groups.filter(name='PotentialEmployee').exists():
-            return redirect('homePE')
+            return redirect('homepagePE')
         if user.groups.filter(name='HiringManager').exists():
             return redirect('homepageHM')
         else:
@@ -85,6 +85,13 @@ def homepageHM(request):
     print(PE)
     return render(request, 'homeHM.html', {'PE': PE, 'user': user})
 
+def homepagePE(request):
+    user = request.user
+    print(User.objects)
+    HM = User.objects.filter(groups__name='HiringManager')
+    print(HM)
+    return render(request, 'homePE.html', {'HM': HM, 'user': user})
+
 """
 def homePE(request):
     user = request.user
@@ -96,7 +103,7 @@ def homePE(request):
         uploaded_file_url = fs.url(filename)
         print("URL IS AT: \n" + uploaded_file_url)
     return render(request, 'homePE.html', {'user': user})
-"""
+
 
 def list(request):
     user = request.user
@@ -126,3 +133,5 @@ def list(request):
 
     # Render list page with the documents and the form
     return render(request, 'homePE.html',{'user': user, 'RS': RS, 'CVS': CVS, 'form': form})
+
+"""

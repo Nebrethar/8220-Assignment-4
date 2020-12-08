@@ -31,10 +31,9 @@ urlpatterns = [
     path('loginform.html', views.loginform, name='loginform'),
     url('userlogin', views.userlogin, name='userlogin'),
     url('signupPE', core_views.signupPE, name='signupPE'),
-    url('list', core_views.list, name='list'),
-    url('homePE', core_views.list, name='homePE'),
     url('signupHM', core_views.signupHM, name='signupHM'),
     url('homepageHM', core_views.homepageHM, name='homepageHM'),
+    url('homepagePE', core_views.homepagePE, name='homepagePE'),
     #url('accounts/login/$', auth_views.LoginView.as_view(template='login.html'), name='login'),
     #url('accounts/logout/$', auth_views.LogoutView, name='logout'),
 ]
