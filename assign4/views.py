@@ -10,7 +10,6 @@ from django.http import HttpResponseRedirect
 
 from django.contrib.auth.forms import AuthenticationForm
 from assign4.forms import SignUpFormPE, SignUpFormHM, DocumentForm
-from assign4.models import Resume, CV
 from django.urls import reverse
 from datetime import datetime
 from django.conf import settings
