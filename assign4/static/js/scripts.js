@@ -40,7 +40,11 @@
       target: '#mainNav',
       offset: 80
     });
-  
+    
+    $('PEstart').click(function() {
+      $("#id").css("display", "none");
+    });
+
     // Collapse Navbar
     var navbarCollapse = function() {
       if ($("#mainNav").offset().top > 100) {

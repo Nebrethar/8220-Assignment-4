@@ -67,6 +67,10 @@ body {
   color: #212529;
   text-align: left;
   background-color: #fff;
+  background-color: #1abc9c !important;
+}
+
+
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -1661,7 +1665,6 @@ pre code {
 .table td {
   padding: 0.75rem;
   vertical-align: top;
-  border-top: 0.125rem solid #dee2e6;
 }
 .table thead th {
   vertical-align: bottom;
@@ -9771,7 +9774,7 @@ button.bg-dark:focus {
 }
 
 .text-white {
-  color: #fff !important;
+  color: #fff;
 }
 
 .text-primary {
@@ -9958,9 +9961,6 @@ h3 {
   }
 
   .table-bordered th,
-.table-bordered td {
-    border: 1px solid #dee2e6 !important;
-  }
 
   .table-dark {
     color: inherit;
@@ -10112,6 +10112,9 @@ h3 {
 }
 .masthead {
   padding-top: calc(6rem + 74px);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   padding-bottom: 6rem;
 }
 .masthead .masthead-heading {
@@ -10241,4 +10244,18 @@ form .row:first-child .floating-label-form-group {
 
 .grouper {
   margin-bottom: 3rem;
+}
+
+.textin {
+  width: 20em;
+}
+
+.turqtext {
+  color: #1abc9c !important;
+}
+
+.placelow {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }

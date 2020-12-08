@@ -1,0 +1,35 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+{% load static %}
+<header class="masthead bg-primary text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+        <h1 class="text-uppercase mb-0">Login Here</h1>
+        {% if form.errors %}
+             <p>Your username and password didn't match. Please try again.</p>
+        {% endif %}
+        <form method="POST" action="{% url 'userlogin' %}">
+            {% csrf_token %}
+            {% for field in form %}
+            <p>
+              <p class="masthead-subheading font-weight-light mb-0 mt-3" style="margin-right:0 !important">{{ field.label_tag }}</p>
+                {{ field }}
+            </p>
+            {% endfor %}
+        
+            <div class="text-center mt-4">
+              <a id="signup" style="margin-right:0.2em" class="btn btn-xl btn-outline-light" href="{% url 'roleSU' %}">
+                  <i class="fas fa-download mr-2"></i>
+                  Sign Up
+              </a>     
+              <button type="submit" id="login" style="margin-left:0.6em" class="btn btn-xl btn-outline-light">
+                  <i class="fas fa-download mr-2"></i>
+                  Log in
+              </button>
+          </div><br><br>
+            <input type="hidden" name="next" value="{{ next }}" />
+          </form>
+        <!-- Masthead Subheading--> 
+    </div>
+{% endblock %}

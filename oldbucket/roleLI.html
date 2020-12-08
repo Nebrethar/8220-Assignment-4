@@ -1,0 +1,34 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+<div id="role">
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <!-- Masthead Heading-->
+            <h1 class="masthead-heading text-uppercase mb-0">Welcome back!</h1>
+            <!-- Icon Divider-->
+            <div class="divider-custom divider-light">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Masthead Subheading-->
+            <p class="masthead-subheading font-weight-light mb-0">What role do you fit best?</p>
+        </div>
+        <!-- About Section Button-->
+        <div class="text-center mt-4">
+            <a class="btn btn-xl btn-outline-light" href="loginPE.html">
+                <i class="fas fa-download mr-2"></i>
+                Potential Employee
+            </a>
+            &nbsp;&nbsp;
+            <a class="btn btn-xl btn-outline-light" href="loginHM.html">
+                <i class="fas fa-download mr-2"></i>
+                Hiring Manager
+            </a>
+        </div>
+    </header>
+</div>
+
+{% endblock %}

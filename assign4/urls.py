@@ -15,9 +15,29 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url
+from django.contrib.auth import views as auth_views
+from django.conf import settings
+from django.conf.urls.static import static
 from . import views
 
+from assign4 import views as core_views
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.index)
+    path('admin/', admin.site.urls, name='admin'),
+    path('', views.index, name='index'),
+    path('roleSU.html', views.roleSU, name='roleSU'),
+    path('roleLI.html', views.roleLI, name='roleLI'),
+    path('loginform.html', views.loginform, name='loginform'),
+    url('userlogin', views.userlogin, name='userlogin'),
+    url('signupPE', core_views.signupPE, name='signupPE'),
+    url('list', core_views.list, name='list'),
+    url('homePE', core_views.list, name='homePE'),
+    url('signupHM', core_views.signupHM, name='signupHM'),
+    url('homepageHM', core_views.homepageHM, name='homepageHM'),
+    #url('accounts/login/$', auth_views.LoginView.as_view(template='login.html'), name='login'),
+    #url('accounts/logout/$', auth_views.LogoutView, name='logout'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

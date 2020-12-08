@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+from django.urls import reverse_lazy
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -37,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'assign4'
+    'assign4',
+#    'assign4.Resume',
+#    'assign4.CV'
 ]
 
 MIDDLEWARE = [
@@ -126,3 +129,6 @@ MEDIA_ROOT = '/home/nebsdonuts/assign4/media'
 MEDIA_URL = '/media/'
 STATIC_ROOT = '/home/nebsdonuts/assign4/static'
 STATIC_URL = '/static/'
+
+#LOGIN_URL = reverse_lazy('loginform')
+#LOGIN_REDIRECT_URL = reverse_lazy('home')

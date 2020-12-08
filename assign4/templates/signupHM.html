@@ -1,0 +1,36 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+<div id="signupHM" class="nostart">
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            {% block contentPE %}
+            <h2>Sign up</h2>
+            {% if form.errors %}
+            <p>Some details were incorrect. Please try again.</p>
+                {% endif %}
+                <form method="POST">
+                    {% csrf_token %}
+                    {% for field in form %}
+                    <p>
+                        <p class="masthead-subheading font-weight-light mb-0 mt-3" style="margin-right:0 !important">{{ field.label_tag }}</p>
+                        {{ field }}
+                    </p>
+                    {% endfor %}
+                
+                    <div class="text-center mt-4">
+                        <a id="signup" style="margin-right:0.2em" class="btn btn-xl btn-outline-light" href="{% url 'userlogin' %}">
+                            <i class="fas fa-download mr-2"></i>
+                            Log In
+                        </a>     
+                        <button type="submit" id="signup" style="margin-right:0.2em" class="btn btn-xl btn-outline-light">
+                            <i class="fas fa-download mr-2"></i>
+                            Sign Up
+                        </button>     
+            </form>
+            {% endblock %}
+        </div>
+    </header>
+
+{% endblock %}
