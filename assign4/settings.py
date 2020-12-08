@@ -125,7 +125,7 @@ USE_TZ = True
 # see https://help.pythonanywhere.com/pages/DjangoStaticFiles for more info
 MEDIA_ROOT = '/home/nebsdonuts/assign4/media'
 MEDIA_URL = '/media/'
-STATIC_ROOT = (os.path.join(BASE_DIR, "assign4/static"))
+STATIC_ROOT = (os.path.join(BASE_DIR, "/static"))
 STATIC_URL = '/static/'
 
 #LOGIN_URL = reverse_lazy('loginform')
